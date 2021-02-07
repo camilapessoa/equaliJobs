@@ -1,4 +1,4 @@
-const companyCollections = require('../models/companySchema')
+const companyCollections = require('../model/companySchema')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const SECRET_COMPANY = process.env.SECRET_COMPANY
