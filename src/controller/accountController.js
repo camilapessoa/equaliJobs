@@ -1,4 +1,4 @@
-const accountCollections = require('../models/accountSchema')
+const accountCollections = require('../model/accountSchema')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const SECRET_USER = process.env.SECRET_USER
