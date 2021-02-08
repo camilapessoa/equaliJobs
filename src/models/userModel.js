@@ -15,7 +15,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
-    lowercase: true
   },
   cid: {
     type: String,
@@ -27,7 +26,7 @@ const userSchema = new mongoose.Schema({
     select: false
   },
 }, {
-  timestamps: true, collection: 'users'
+  timestamps: true
 });
 
 userSchema.pre('save', async function (next) {

@@ -6,7 +6,8 @@ mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useUnifiedTopology: true
   })
   .then(() => console.log('Conectamos no MongoAtlas'));
 

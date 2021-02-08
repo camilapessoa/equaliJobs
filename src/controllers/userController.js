@@ -1,17 +1,12 @@
 const User = require('../models/userModel')
 const AppError = require('../utils/appError')
-const jwt = require('jsonwebtoken')
-const SECRET_USER = process.env.SECRET_USER
+require('dotenv').config({ path: __dirname + '/.env' })
+//const jwt = require('jsonwebtoken')
 
-const generateToken = (params = {}) => {
-  return jwt.sign(params, SECRET_USER, { expiresIn: 86400 })
-}
+//const generateToken = (params = {}) => {
+//return jwt.sign(params, SECRET_USER, { expiresIn: 86400 })}
 
 exports.createUser = async (req, res, next) => {
-  if (!req.body) {
-    return next(new AppError('Insira dados validos', 403));
-  }
-
   if (await User.findOne({ email })) return next(new AppError('Usuario já cadastrado', 403));
 
   const newUser = await User.create(req.body);
@@ -26,7 +21,7 @@ exports.createUser = async (req, res, next) => {
 }
 
 exports.loginUser = async (req, res, next) => {
-  const { email, password } = req.body
+  const { email } = req.body
 
   const user = await User.findOne({ email }).select('+password')
 

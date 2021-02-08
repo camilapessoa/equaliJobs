@@ -10,7 +10,7 @@ const auth = (req, res, next) => {
 
   const token = authHeader.split(' ')[1]
 
-  jwt.verify(token, SECRET_USER, (error, decoded) => {
+  jwt.verify(token, SECRET_GENERAL, (error, decoded) => {
     if (error)
       return res.status(401).send({ message: 'Token inválido.' })
 

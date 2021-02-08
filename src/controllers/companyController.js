@@ -1,7 +1,7 @@
 const companyModel = require('../models/companyModel')
+require('dotenv').config({ path: __dirname + '/.env' })
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const SECRET_USER = process.env.SECRET_USER
 
 const generateToken = (params = {}) => {
   return jwt.sign(params, SECRET_USER, { expiresIn: 86400 })
@@ -43,5 +43,4 @@ exports.loginCompany = async (req, res) => {
     company,
     token: generateToken({ id: company._id })
   })
-
 }
