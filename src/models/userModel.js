@@ -1,16 +1,15 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
 
-const accountSchema = new Schema({
-
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
   },
   cpf: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   email: {
     type: String,
@@ -18,32 +17,26 @@ const accountSchema = new Schema({
     required: true,
     lowercase: true
   },
-
   cid: {
     type: String,
     required: true
   },
-
   password: {
     type: String,
     required: true,
     select: false
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
 }, {
-  versionKey: false
+  timestamps: true, collection: 'users'
 });
 
-accountSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
   const hash = await bcrypt.hash(this.password, 10)
   this.password = hash
 
   next()
 })
 
-const accountCollections = mongoose.model('account', accountSchema);
+const userCollection = mongoose.model('user', userSchema);
 
-module.exports = accountCollections
+module.exports = userCollection

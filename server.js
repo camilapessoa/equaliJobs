@@ -1,13 +1,21 @@
+const mongoose = require('mongoose')
+require('dotenv').config({ path: __dirname + '/.env' })
 const app = require('./src/app')
-const dotEnv = require('dotenv')
 
-dotEnv.config();
-const PORT = process.env.PORT
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  })
+  .then(() => console.log('Conectamos no MongoAtlas'));
+
+const PORT = 33
+
 
 app.listen(PORT, (err) => {
   if (err) {
-    console.log(`Error: ${err}`);
+    console.log(err)
   }
-  console.log(`O app está rodando em http://localhost: ${PORT}`);
-
-}); 
+  console.log(`Server is running on port ${PORT}`)
+})

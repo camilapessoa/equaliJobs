@@ -33,7 +33,7 @@ const companySchema = new Schema({
     default: Date.now
   }
 }, {
-  versionKey: false
+  timestamps: true, collection: 'companies'
 });
 
 companySchema.pre('save', async function (next) {
@@ -43,6 +43,6 @@ companySchema.pre('save', async function (next) {
   next()
 })
 
-const companyCollections = mongoose.model('company', companySchema);
+const companyModel = mongoose.model('company', companySchema);
 
-module.exports = companyCollections
+module.exports = companyModel
