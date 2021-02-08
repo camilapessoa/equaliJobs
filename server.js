@@ -11,12 +11,11 @@ mongoose
   })
   .then(() => console.log('Conectamos no MongoAtlas'));
 
-const PORT = 33
 
 
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) {
     console.log(err)
   }
-  console.log(`Server is running on port ${PORT}`)
+  console.log(`Server is running on port ${process.env.PORT}`)
 })

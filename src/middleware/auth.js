@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const SECRET_USER = process.env.SECRET_USER
+require('dotenv').config({ path: __dirname + '/.env' })
 
 const auth = (req, res, next) => {
 
@@ -10,7 +10,7 @@ const auth = (req, res, next) => {
 
   const token = authHeader.split(' ')[1]
 
-  jwt.verify(token, SECRET_GENERAL, (error, decoded) => {
+  jwt.verify(token, process.env.TOKEN_SECRET, (error, decoded) => {
     if (error)
       return res.status(401).send({ message: 'Token inválido.' })
 

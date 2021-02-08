@@ -1,16 +1,17 @@
 # Equalijobs
 
-Equalijobs é uma paltaforma que visa empregabilidade de pessoas com deficiência.
+Equalijobs é uma plataforma que visa empregabilidade de pessoas com deficiência.
 
-## Installation
+## Instalação
 
-Use the package manager [npm](https://docs.npmjs.com/cli/v6/using-npm) to install foobar.
+Use o gerenciador de pacotes [npm](https://docs.npmjs.com/cli/v6/using-npm) para instalar o Equalijobs.
 
-```bash
+```
 npm install && npm start
 ```
 
 ## Tecnologias
+
 ```
  JavaScript
  Git/Github
@@ -24,10 +25,12 @@ npm install && npm start
  heroku
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Contribuições
 
-Please make sure to update tests as appropriate.
+Pull requests são bem vindos. Para mudanças significativas, por favor abra um issue para discutir essas mudanças.
 
-## License
+Tenha certeza de atualizar os testes de acordo com as mudanças.
+
+## Licença
+
 [MIT](https://choosealicense.com/licenses/mit/)
