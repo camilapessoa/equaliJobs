@@ -1,11 +1,11 @@
 const companyCollections = require('../model/companySchema')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const SECRET_COMPANY = process.env.SECRET_COMPANY
+const SECRET_USER = process.env.SECRET_USER
 
 
 const generateToken = (params = {}) => {
-  return jwt.sign(params, SECRET_COMPANY, { expiresIn: 86400 })
+  return jwt.sign(params, SECRET_USER, { expiresIn: 86400 })
 }
 
 const createCompany = async (request, response) => {
