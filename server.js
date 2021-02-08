@@ -4,7 +4,6 @@ const dotEnv = require('dotenv')
 dotEnv.config();
 const PORT = process.env.PORT
 
-
 app.listen(PORT, (err) => {
   if (err) {
     console.log(`Error: ${err}`);

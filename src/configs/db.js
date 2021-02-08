@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
+const dotEnv = require('dotenv')
+
+dotEnv.config();
 
 const mongoUri = process.env.MONGO_URI //mongodb://localhost:27017/
 
