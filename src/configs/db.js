@@ -7,7 +7,7 @@ const connect = () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: falsegit
+    //useFindAndModify: falsegit
   })
 
     .then(() => console.log('Conectamos no Mongo.'))
