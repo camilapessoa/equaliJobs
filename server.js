@@ -1,4 +1,4 @@
-const app = require('./app') 
+const app = require('./src/app')
 const dotEnv = require('dotenv')
 
 dotEnv.config();
